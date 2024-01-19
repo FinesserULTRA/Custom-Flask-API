@@ -70,7 +70,7 @@ The Flask API is a simple Python application that utilizes the Flask framework t
 
 ### `POST Endpoint`
 
-- URL: /POST
+- URL: `/POST`
 - Method: POST
 - Request Body:
     ```bash
@@ -93,7 +93,7 @@ The Flask API is a simple Python application that utilizes the Flask framework t
 
 ### `GET Endpoint`
 
-- URL: /test
+- URL: `/test`
 - Method: GET
 - Response:
     ```bash
