@@ -11,7 +11,7 @@ def main():
 
     # URL and data for request
     post_url = f'{base_url}/POST'
-    post_data = {"name": "John Doe"}
+    post_data = {"name": "Alex Moore"}
 
     # Send the POST request
     post_response = requests.post(post_url, json=post_data)
@@ -28,7 +28,7 @@ def main():
 
     # Print the response
     test_msg = test_response.json().get('test')
-    print(f'Test Response: {test_msg}')
+    print(f'GET Response: {test_msg}')
 
 
 if __name__ == "__main__":

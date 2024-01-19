@@ -8,57 +8,6 @@
 
     <p>This is a basic HTML template for a Python Flask application.</p>
 
-    <div>
-        <h2>Set Name</h2>
-        <input type="text" id="name" placeholder="Enter your name" required>
-        <button onclick="setName()">Set Name</button>
-    </div>
-
-    <div>
-        <h2>Get Names</h2>
-        <button onclick="getNames()">Get Names</button>
-        <p id="names"></p>
-    </div>
-    <p></p>
-    <p></p>
-    <p></p>
     <p>This is a test Website for our Flask Stuff</p>
-
-    <script>
-        function setName() {
-            var nameInput = document.getElementById('name');
-            var userName = nameInput.value;
-
-            fetch('/set_name', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name: userName })
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                } else {
-                    return response.text().then(error => Promise.reject(error));
-                }
-            })
-            .then(result => {
-                alert(result);
-                nameInput.value = ''; // Clear the input field after setting the name
-            })
-            .catch(error => {
-                alert('Error: ' + error);
-            });
-        }
-
-        function getNames() {
-            fetch('/get_names')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('names').innerText = 'Names: ' + data.names.join(', ');
-                });
-        }
-    </script>
 </body>
 </html>
