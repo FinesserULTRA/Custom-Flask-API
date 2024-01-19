@@ -3,15 +3,19 @@ import colorama
 
 colorama.init()
 
-print(colorama.Fore.GREEN + 'Sending requests...')
+print(colorama.Fore.GREEN, end='')
 
 
 def main():
     base_url = 'http://127.0.0.1:5000'
 
-    # URL and data for request
+    # URL for request
     post_url = f'{base_url}/POST'
-    post_data = {"name": "Alex Moore"}
+
+    # Get name
+    post_data = {}
+    name = input('What is your name? ')
+    post_data['name'] = name
 
     # Send the POST request
     post_response = requests.post(post_url, json=post_data)
