@@ -8,7 +8,6 @@ This repository contains a simple Flask API and a corresponding test script for 
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
-- [Home Screen](#home-screen)
 - [Contributing](#contributing)
 - [License](#license)
 
