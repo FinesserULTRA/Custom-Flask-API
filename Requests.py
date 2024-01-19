@@ -1,9 +1,12 @@
+import sys
+
 import requests
 import colorama
+import json
 
 colorama.init()
 
-print(colorama.Fore.GREEN, end='')
+print(colorama.Fore.LIGHTWHITE_EX, end='')
 
 
 def main():
@@ -12,17 +15,19 @@ def main():
     # URL for request
     post_url = f'{base_url}/POST'
 
-    # Get name
-    post_data = {}
-    name = input('What is your name? ')
-    post_data['name'] = name
+    # Get name in dict form
+    payload = {}
+    name = input('What is your name? \n')
+    payload['name'] = name
 
     # Send the POST request
-    post_response = requests.post(post_url, json=post_data)
+    post_response = requests.post(post_url, json=payload)
 
-    # Print the response
-    post_msg = post_response.json().get('name')
-    print(f'POST Response: {post_msg}')
+    # Get the response as json
+    post_msg = post_response.json()
+
+    # print in text form
+    print(f'POST Response: {list(post_msg.values())[0]}')
 
     # url of test endpoint
     test_url = f'{base_url}/test'

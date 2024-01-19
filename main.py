@@ -17,11 +17,16 @@ def greet():
     # Check if 'name' is present in the JSON data
     if 'name' in data:
         name = data['name']
+
+        if name == '':
+            return jsonify({'error': 'You must provide a name, you fool'}), 400
+
         response = {'name': f'Hello, {name}! How are you?'}
         return jsonify(response)
+
     else:
-        # Return an error response if 'name' is not provided
-        return jsonify({'error': 'You must provide a name, you fool'}), 400
+        # Return an error response if nothing is not provided
+        return jsonify({'error': 'You must provide something man...'}), 400
 
 
 # Define a route for handling GET requests
